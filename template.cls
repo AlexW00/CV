@@ -6,7 +6,7 @@
 \RequirePackage[dvipsnames]{xcolor} % moved here I guess article class causes option clash with xcolor if used after loading the class
 \LoadClass[11pt]{article}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{muratcan_cv}[2020/04/15 Muratcan CV Class]
+\ProvidesClass{template}[2020/04/15 Muratcan CV Class]
 \RequirePackage[sfdefault]{noto}
 \RequirePackage{etoolbox}
 \RequirePackage{pgffor}
