@@ -14,7 +14,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: alexander-weichart-cv.tex
           continue_on_error: true
           latexmk_use_xelatex: true
       - uses: ncipollo/release-action@v1
