@@ -1,5 +1,8 @@
 name: Build LaTeX document
-on: [push]
+on: 
+  push:
+    tags:
+    - '*'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -13,8 +16,7 @@ jobs:
             main.tex
           continue_on_error: true
           latexmk_use_xelatex: true
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: main.pdf
+      - name: Create release
+        uses: ncipollo/release-action@v1
+          with:
+          artifacts: "main.pdf"
