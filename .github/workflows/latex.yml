@@ -19,4 +19,4 @@ jobs:
           latexmk_use_xelatex: true
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "main.pdf"
+          artifacts: "alexander-weichart-cv.pdf"
