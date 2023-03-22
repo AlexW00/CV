@@ -12,6 +12,7 @@ jobs:
           root_file: |
             main.tex
           continue_on_error: true
+          latexmk_use_xelatex: true
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
