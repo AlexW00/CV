@@ -126,4 +126,19 @@
 }
 
 
+\usepackage{catchfile}
+\newcommand{\getenv}[2][]{%
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+
+
+\getenv[\PHONE]{PHONE_NUMBER}
+
+\usepackage{stringstrings}
+\newcommand{\getPhone}{%
+  \def\mystring{\PHONE}%
+  \stringlength[q]{\mystring}%
+  \def\mythresh{1}%
+  \ifnum\theresult>\mythresh Phone: \mystring \else Phone: *on request*\fi 
+}
 
