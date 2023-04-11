@@ -108,7 +108,7 @@
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \indent \begin{minipage}{0.87\linewidth} \footnotesize #1 \end{minipage} \\[0.1cm]
+    \indent \begin{minipage}{0.87\linewidth} \footnotesize #1 \end{minipage} \\[0.1cm]
 }
 
 \newcommand\createskill[2]{%
