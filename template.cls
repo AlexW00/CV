@@ -33,6 +33,7 @@
 \newcommand*{\setcitizenship}[1]{\def\@citizenship{#1}}
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
+\newcommand*{\setprojects}[1]{\def\@projects{#1}}
 \newcommand*{\sethomepage}[1]{\def\@homepage{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
 
@@ -54,7 +55,7 @@
 \newcommand{\homepageview}{\href{\@homepage}{\faHome\ \footnotesize homepage}}
 \newcommand{\githubview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
 \newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
-
+\newcommand{\projectsview}{\href{\@projects}{\faLinkedinSquare\ \footnotesize projects}}
 
 \newcommand{\name}{%
     {\LARGE \color{\@themecolor} \@firstname \ \textsc{\@lastname}}
@@ -64,7 +65,7 @@
         % {\small \@address  \cps \@citizenship \\ \@mobile \cps \@mail% %%OLD
         {\small \@mail \ \cpshalf \@mobile %
         \\%
-        \homepageview \cpshalf \linkedinview \cpshalf \githubview \\ 
+        \homepageview \cpshalf \linkedinview \cpshalf  \projectsview \cpshalf \githubview \\ 
         } % 
 }
 
