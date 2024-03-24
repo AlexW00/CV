@@ -305,3 +305,4 @@ sigir.bib
 *.pdf
 ltex*.txt
 .envrc
+.env
