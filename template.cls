@@ -84,9 +84,9 @@
 }
 
 \newcommand{\contact}{%
-        % {\small \@address  \cps \@citizenship \\ \@mobile \cps \@mail% %%OLD
         {\small \@mail%
-        \ifstrempty{\@mobile}{}{ \cpshalf \@mobile}%
+        \sbox0{\@mobile}%
+        \ifdim\wd0=0pt\else \cpshalf \@mobile \fi%
         \\%
         \homepageview \cpshalf \linkedinview \cpshalf \projectsview \cpshalf \githubview%
         } % 
@@ -158,10 +158,7 @@
 
 \getenv[\PHONE]{PHONE_NUMBER}
 
-\usepackage{stringstrings}
+% \usepackage{stringstrings} % removed dependency
 \newcommand{\getPhone}{%
-  \def\mystring{\PHONE}%
-  \stringlength[q]{\mystring}%
-  \def\mythresh{1}%
-  \ifnum\theresult>\mythresh Phone: \mystring \else \fi 
+  \ifdefempty{\PHONE}{}{Phone: \PHONE}%
 }
