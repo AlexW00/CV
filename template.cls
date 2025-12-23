@@ -13,6 +13,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
+\RequirePackage{graphicx}
 \RequirePackage[left=0.5in,top=0.1in,right=0.5in,bottom=0.1in]{geometry} % DOCUMENT MARGINS 
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
@@ -30,12 +31,18 @@
 \newcommand*{\setmobile}[1]{\def\@mobile{#1}}
 \newcommand*{\setposition}[1]{\def\@position{#1}}
 \newcommand*{\setmail}[1]{\def\@mail{#1}}
+\newcommand*{\setbirthday}[1]{\def\@birthday{#1}}
 \newcommand*{\setcitizenship}[1]{\def\@citizenship{#1}}
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
 \newcommand*{\setprojects}[1]{\def\@projects{#1}}
 \newcommand*{\sethomepage}[1]{\def\@homepage{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
+\newcommand*{\setprofilepic}[1]{\def\@profilepic{#1}}
+\newcommand*{\setprofilepicsize}[1]{\def\@profilepicsize{#1}}
+\providecommand*{\@birthday}{}
+\providecommand*{\@profilepic}{}
+\providecommand*{\@profilepicsize}{2.0cm}
 
 \hypersetup{
     colorlinks=true,
@@ -43,13 +50,25 @@
 }
 
 % Header
-\newcommand\headerview{
-\hfill
-\begin{minipage}{0.55\linewidth} % extend header length here
-    \center \name \\[0.05cm] 
-    \contact % address \ mobile \\ mail
-\end{minipage}
-\hfill
+\newcommand\headerview{%
+\ifstrempty{\@profilepic}{}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,inner sep=0pt] at ([xshift=-0.5in,yshift=-0.1in]current page.north east) {%
+      \includegraphics[width=\@profilepicsize]{\@profilepic}%
+    };
+  \end{tikzpicture}%
+}%
+\noindent%
+\hbox to \linewidth{%
+  \hfill%
+  \begin{minipage}[t]{0.55\linewidth} % extend header length here
+      \vspace{0pt}%
+      \centering \name\par\vspace{0.05cm}
+      \contact % address \ mobile \\ mail
+  \end{minipage}%
+  \hfill%
+}%
+\par%
 }
     
 \newcommand{\homepageview}{\href{\@homepage}{\faHome\ \footnotesize Homepage}}
@@ -57,16 +76,26 @@
 \newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize LinkedIn}}
 \newcommand{\projectsview}{\href{\@projects}{\faCode\ \footnotesize Projects}}
 \newcommand{\projectslinkicon}{\href{\@projects}{{\normalsize\textcolor{NavyBlue}{{\normalfont\mdseries\upshape\raisebox{0.15ex}{\faLink}}}}}}
+\newcommand{\birthdayview}{{\large \color{black!60}\,·\,\@birthday}}
 
 \newcommand{\name}{%
-    {\LARGE \color{\@themecolor} \@firstname \ \textsc{\@lastname}}
+    \begingroup%
+    \setbox0=\hbox{{\LARGE \color{\@themecolor} \@firstname \ \textsc{\@lastname}}}%
+    \hbox to \linewidth{%
+        \hss%
+        \copy0%
+        \ifstrempty{\@birthday}{}{\rlap{\birthdayview}}%
+        \hss%
+    }%
+    \endgroup%
 }
 
 \newcommand{\contact}{%
         % {\small \@address  \cps \@citizenship \\ \@mobile \cps \@mail% %%OLD
-        {\small \@mail \ \cpshalf \@mobile %
+        {\small \@mail%
+        \ifstrempty{\@mobile}{}{ \cpshalf \@mobile}%
         \\%
-        \homepageview \cpshalf \linkedinview \cpshalf  \projectsview \cpshalf \githubview \\ 
+        \homepageview \cpshalf \linkedinview \cpshalf \projectsview \cpshalf \githubview%
         } % 
 }
 
@@ -141,5 +170,5 @@
   \def\mystring{\PHONE}%
   \stringlength[q]{\mystring}%
   \def\mythresh{1}%
-  \ifnum\theresult>\mythresh Phone: \mystring \else Phone: *on request*\fi 
+  \ifnum\theresult>\mythresh Phone: \mystring \else \fi 
 }
