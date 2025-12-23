@@ -52,10 +52,11 @@
 \hfill
 }
     
-\newcommand{\homepageview}{\href{\@homepage}{\faHome\ \footnotesize homepage}}
-\newcommand{\githubview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
-\newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
-\newcommand{\projectsview}{\href{\@projects}{\faLinkedinSquare\ \footnotesize projects}}
+\newcommand{\homepageview}{\href{\@homepage}{\faHome\ \footnotesize Homepage}}
+\newcommand{\githubview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize GitHub}}
+\newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize LinkedIn}}
+\newcommand{\projectsview}{\href{\@projects}{\faCode\ \footnotesize Projects}}
+\newcommand{\projectslinkicon}{\href{\@projects}{{\normalsize\textcolor{NavyBlue}{{\normalfont\mdseries\upshape\raisebox{0.15ex}{\faLink}}}}}}
 
 \newcommand{\name}{%
     {\LARGE \color{\@themecolor} \@firstname \ \textsc{\@lastname}}
@@ -142,4 +143,3 @@
   \def\mythresh{1}%
   \ifnum\theresult>\mythresh Phone: \mystring \else Phone: *on request*\fi 
 }
-
