@@ -42,7 +42,7 @@
 \newcommand*{\setprofilepicsize}[1]{\def\@profilepicsize{#1}}
 \providecommand*{\@birthday}{}
 \providecommand*{\@profilepic}{}
-\providecommand*{\@profilepicsize}{2.0cm}
+\providecommand*{\@profilepicsize}{2.5cm}
 
 \hypersetup{
     colorlinks=true,
@@ -76,18 +76,11 @@
 \newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize LinkedIn}}
 \newcommand{\projectsview}{\href{\@projects}{\faCode\ \footnotesize Projects}}
 \newcommand{\projectslinkicon}{\href{\@projects}{{\normalsize\textcolor{NavyBlue}{{\normalfont\mdseries\upshape\raisebox{0.15ex}{\faLink}}}}}}
-\newcommand{\birthdayview}{{\large \color{black!60}\,·\,\@birthday}}
+\newcommand{\birthdayview}{{\normalsize \color{black!60}\@birthday}}
 
 \newcommand{\name}{%
-    \begingroup%
-    \setbox0=\hbox{{\LARGE \color{\@themecolor} \@firstname \ \textsc{\@lastname}}}%
-    \hbox to \linewidth{%
-        \hss%
-        \copy0%
-        \ifstrempty{\@birthday}{}{\rlap{\birthdayview}}%
-        \hss%
-    }%
-    \endgroup%
+    {\LARGE \color{\@themecolor} \@firstname \ \textsc{\@lastname}}%
+    \ifstrempty{\@birthday}{}{\\[0.1cm] \birthdayview}%
 }
 
 \newcommand{\contact}{%
