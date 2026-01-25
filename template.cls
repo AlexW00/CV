@@ -16,6 +16,7 @@
 \RequirePackage{graphicx}
 \RequirePackage[left=0.5in,top=0.1in,right=0.5in,bottom=0.1in]{geometry} % DOCUMENT MARGINS 
 \RequirePackage{hyperref}
+\RequirePackage{hyperxmp}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
 \RequirePackage{ifthen}
