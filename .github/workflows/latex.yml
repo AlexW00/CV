@@ -23,7 +23,7 @@ jobs:
           root_file: alexander-weichart-cv-ja.tex
           continue_on_error: true
           latexmk_use_xelatex: true
-          extra_system_packages: fonts-ipaexfont
+          extra_packages: "collection-langjapanese"
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "alexander-weichart-cv.pdf,alexander-weichart-cv-ja.pdf"
