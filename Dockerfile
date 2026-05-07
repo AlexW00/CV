@@ -15,6 +15,7 @@ RUN tlmgr option repository https://ftp.tu-chemnitz.de/pub/tug/historic/systems/
     collection-fontsextra \
     noto \
     fontawesome \
+    collection-langjapanese \
   && tlmgr path add
 
 WORKDIR /work

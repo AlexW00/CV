@@ -1,0 +1,175 @@
+\documentclass{template}
+
+\usepackage{xeCJK}
+\setCJKmainfont[AutoFakeBold=2.5]{IPAexGothic}
+\setCJKsansfont[AutoFakeBold=2.5]{IPAexGothic}
+
+\usepackage[square,numbers]{natbib}
+
+\usepackage{hyperref,xcolor}
+\hypersetup{
+    pdftitle={履歴書 - Alexander Weichart},
+    pdfauthor={Alexander Weichart},
+    pdfsubject={フルスタックソフトウェアエンジニア - 履歴書},
+    pdfkeywords={Alexander Weichart, 履歴書, ソフトウェアエンジニア, フルスタック, Java, TypeScript, SpringBoot, React, PostgreSQL, Kubernetes, GitLab, Flux CD, Linux, DevOps, Agile, AI, LLM, Claude, Agent},
+    pdfcopyright={Copyright (C) 2026 Alexander Weichart},
+    pdfmetalang={ja},
+    linkcolor=blue,
+    citecolor=blue
+}
+
+\setname{Alexander Weichart}{}
+\setaddress{大阪府、日本}
+\setbirthday{アレクサンダー・ヴァイヒャート}
+\setmobile{\getPhone}
+\setmail{alexanderweichart@fastmail.com}
+\setcitizenship{ドイツ}
+\setlinkedinaccount{https://www.linkedin.com/in/alexander-weichart-a357241a4/}
+\setprojects{https://alexanderweichart.de/4_Projects/Projects}
+\sethomepage{https://www.alexanderweichart.de/}
+\setgithubaccount{https://github.com/AlexW00}
+\setprofilepic{profile.jpeg}
+\setthemecolor{Black}
+
+
+\begin{document}
+
+%Create header
+\headerview
+\vspace{3ex} % white space (extra room for profile photo)
+
+%
+\section{スキル}
+    \newcommand{\skillone}{\createskill{主要言語}{Java \cpshalf TypeScript \cpshalf Swift }}
+    \newcommand{\skilltwo}{\createskill{主要技術}{SpringBoot, React, Postgres \cpshalf Kubernetes, GitLab, Flux \cpshalf Linux  }}
+    \newcommand{\skillthree}{\createskill{言語能力}{ドイツ語（母語）\cpshalf 英語（流暢）\cpshalf 日本語（日常会話、JLPT N2学習中）\cpshalf フランス語（基礎）}}
+    %
+    \createskills{\skillone, \skilltwo, \skillthree}
+    \vspace{-3mm} % reduces whitespace!
+    %
+\bigskip
+
+\section{職務経歴}
+    %
+    \datedexperience{DEBTVISION GmbH（バーデン＝ヴュルテンベルク州立銀行）}{2023年10月 - 2026年3月}
+    \explanation{フルスタックソフトウェアエンジニア - Java, TypeScript, Kubernetes}{シュトゥットガルト、ドイツ}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    B2B金融プラットフォームにおいて、API設計、データベースモデリング、CI/CDパイプライン構築、Kubernetes本番環境デプロイまで機能をエンドツーエンドで担当。
+
+    \smallskip
+    \coloredbullet\ %
+    AI活用の開発手法（Copilot、AIコードレビュー）をチームに導入し、6ヶ月間で開発速度を80\%の向上に貢献。
+
+    \smallskip
+    \coloredbullet\ %
+    クラウドインフラの最適化により、CPUを2倍・メモリを12\%増強しつつ、コストを17\%削減。
+
+    \smallskip
+    \coloredbullet\ %
+    本番クラスタを別のクラウドプロバイダーにリカバリクラスタとしてゼロから復元する自動化ツールを構築。
+    }
+    %
+    \datedexperience{レーゲンスブルク大学}{2020年9月 - 2023年9月}
+    \explanation{学生リサーチアシスタント - JavaScript, Kotlin, C, Neo4J, Figma}{レーゲンスブルク、ドイツ}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    カリキュラムをグラフ構造で整理するプラットフォーム\href{https://hci.ur.de/projects/graphit}{GraphIT}の開発をリードし、DELFI 2025で発表。
+    }
+
+\bigskip
+
+\section{\texorpdfstring{プロジェクト\ \projectslinkicon}{プロジェクト}}
+    %
+    \datedexperience{Weichart Apps\ \href{https://apps.weichart.de}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    丁寧に設計されたミニマリストなiOSアプリを開発するスタジオ。各アプリは特定の課題に対し、完成度を追求。
+
+    \smallskip
+    \coloredbullet\ %
+    \href{https://apps.weichart.de}{3つのアプリ}を公開済み（例：\href{https://apps.apple.com/app/id6747954401}{Hibi}、紙のような使い心地のカレンダーアプリ）。累計ダウンロード数は1.5万件超。
+    }
+    %
+    \datedexperience{Digital Garden\ \href{https://alexanderweichart.de}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    \href{https://alexanderweichart.de/4_Projects/obsidian-setup-2026/My-AI-native-Obsidian-Setup}{AI活用型}のナレッジベースを公開Webサイトとして運営。月間3,000アクセス超。
+    }
+    %
+    \datedexperience{Obsidian 3D Graph\ \href{https://github.com/AlexW00/obsidian-3d-graph}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    ObsidianのノートをWebGLグラフで可視化するプラグイン。ダウンロード数5万件超、GitHubスター350件超。
+    }
+    %
+    \datedexperience{AI実験\ \href{https://alexanderweichart.de/4_Projects/Projects}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    最先端のAIソリューションをプロトタイプで探求：自然言語からJavaScriptへのコンパイラ（\href{https://alexanderweichart.de/4_Projects/Projects\#-gpt-lang-2023-03-24}{GPT-Lang}）、バーチャル言語タンデムパートナー（\href{https://alexanderweichart.de/4_Projects/Projects\#-tandem-gpt-2023-02-04}{Tandem GPT}）、\href{https://alexanderweichart.de/4_Projects/Projects\#ai-hud-for-japanese-text-2025-12-22}{日本語テキスト認識用AI-HUD}など。
+    }
+
+\bigskip
+
+\section{ワーキングホリデー}
+    \datedexperience{Birchill（大阪、日本）}{2026年4月 - 現在}
+    \explanation{パートタイムソフトウェアエンジニア - TypeScript, ブラウザ拡張機能}{大阪、日本}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    小規模プロダクト企業にて、人気の日本語リーディングツール\href{https://10ten.life}{10ten}の開発に従事。
+
+    \smallskip
+    \coloredbullet\ %
+    大阪の技術系ミートアップへの参加、個人プロジェクトの開発、日本語学習（JLPT N2）に取り組み中。
+    }
+
+\bigskip
+
+\section{学歴}
+    \datedexperience{文学士 - メディア情報学（GPA: 3.5 / 4.0 米国式換算）}{2019年9月 - 2023年9月}
+    \explanation{レーゲンスブルク大学}{レーゲンスブルク、ドイツ}
+    \explanationdetail{
+        \smallskip
+        \coloredbullet\ %
+        フルスタック開発、アジャイルプロジェクト管理、自然言語処理、倫理学。
+     }
+
+\bigskip
+
+\section{コミュニティ}
+\indent
+\explanationdetail{
+\smallskip
+\coloredbullet\ %
+複数の人気オープンソースプロジェクトのメンテナー（\href{https://github.com/AlexW00}{GitHub}）。合計スター数1,000件超。
+
+\smallskip
+\coloredbullet\ %
+日独協会レーゲンスブルク（\href{https://djg-regensburg.de/de/}{DJG Regensburg}）の支援会員。
+
+\smallskip
+\coloredbullet\ %
+\href{https://ratisbona-coding.org/}{Ratisbona Coding E.V.}（コーディングイベントを主催する地域団体）のメンバー。
+}
+\bigskip
+
+\section{論文・発表}
+\indent
+\explanationdetail{
+\smallskip
+\coloredbullet\ %
+Andreas S., Thomas F., Alexander W., Alexander H., and Raphael W., ``ScreenshotMatcher: Taking Smartphone Photos to Capture Screenshots.'' \emph{MuC '21: Proceedings of Mensch und Computer 2021}, Ingolstadt, Germany.
+
+\smallskip
+\coloredbullet\ %
+Raphael W., Leonie S., and Alexander W., ``Demonstrating GraphIT - a Platform for Working with Dependency Graphs of Learning Topics.'' \emph{23. Fachtagung Bildungstechnologien (DELFI 2025)} (\href{https://dl.gi.de/handle/20.500.12116/47137}{GI DL}).
+ }
+
+\end{document}

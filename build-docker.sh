@@ -3,19 +3,26 @@ set -euo pipefail
 
 IMAGE_NAME="${IMAGE_NAME:-cv-latex:local}"
 PLATFORM="${PLATFORM:-linux/amd64}"
-ROOT_TEX="${1:-alexander-weichart-cv.tex}"
 
 docker build --platform "$PLATFORM" -t "$IMAGE_NAME" .
 
-# Pass PHONE_NUMBER through if set (template.cls reads it via kpsewhich --var-value).
-docker run --rm \
-  --platform "$PLATFORM" \
-  -u "$(id -u):$(id -g)" \
-  -e "HOME=/tmp" \
-  -e "PHONE_NUMBER=${PHONE_NUMBER:-}" \
-  -v "$PWD:/work" \
-  -w /work \
-  "$IMAGE_NAME" \
-  "$ROOT_TEX"
+# If specific .tex files are given, build only those. Otherwise build both.
+if [ $# -gt 0 ]; then
+  TEX_FILES=("$@")
+else
+  TEX_FILES=(alexander-weichart-cv.tex alexander-weichart-cv-ja.tex)
+fi
 
-echo "Built: ${ROOT_TEX%.tex}.pdf"
+for ROOT_TEX in "${TEX_FILES[@]}"; do
+  # Pass PHONE_NUMBER through if set (template.cls reads it via kpsewhich --var-value).
+  docker run --rm \
+    --platform "$PLATFORM" \
+    -u "$(id -u):$(id -g)" \
+    -e "HOME=/tmp" \
+    -e "PHONE_NUMBER=${PHONE_NUMBER:-}" \
+    -v "$PWD:/work" \
+    -w /work \
+    "$IMAGE_NAME" \
+    "$ROOT_TEX"
+  echo "Built: ${ROOT_TEX%.tex}.pdf"
+done

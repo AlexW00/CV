@@ -11,12 +11,19 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Compile LaTeX document
+      - name: Compile English CV
         uses: xu-cheng/latex-action@v2
         with:
           root_file: alexander-weichart-cv.tex
           continue_on_error: true
           latexmk_use_xelatex: true
+      - name: Compile Japanese CV
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: alexander-weichart-cv-ja.tex
+          continue_on_error: true
+          latexmk_use_xelatex: true
+          extra_system_packages: fonts-ipaexfont
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "alexander-weichart-cv.pdf"
+          artifacts: "alexander-weichart-cv.pdf,alexander-weichart-cv-ja.pdf"

@@ -1,6 +1,8 @@
 # CV - Alexander Weichart
 
-Public version of my CV. Written in LaTeX, published via GitHub actions. Latest version is available [here](https://github.com/AlexW00/CV/releases/latest)
+Public version of my CV. Written in LaTeX, published via GitHub actions. Latest version is available [here](https://github.com/AlexW00/CV/releases/latest).
+
+日本語版の履歴書も[こちら](https://github.com/AlexW00/CV/releases/latest)からダウンロードできます。
 
 ### Acknowledgements
 
