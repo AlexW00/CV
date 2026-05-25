@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [ -f .env ]; then
+  set -a
+  . ./.env
+  set +a
+fi
+
 IMAGE_NAME="${IMAGE_NAME:-cv-latex:local}"
 PLATFORM="${PLATFORM:-linux/amd64}"
 
