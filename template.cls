@@ -4,7 +4,7 @@
 % Might be interpreted as an easier-to-edit or easier-to-understand-what-is-going-on version of it.
 \author{Murat Can Karacabey}
 \RequirePackage[dvipsnames]{xcolor} % moved here I guess article class causes option clash with xcolor if used after loading the class
-\LoadClass[11pt]{article}
+\LoadClass[11pt,a4paper]{article}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{template}[2020/04/15 Muratcan CV Class]
 \RequirePackage[sfdefault]{noto}
@@ -42,6 +42,7 @@
 \newcommand*{\setprofilepic}[1]{\def\@profilepic{#1}}
 \newcommand*{\setprofilepicsize}[1]{\def\@profilepicsize{#1}}
 \providecommand*{\@birthday}{}
+\providecommand*{\@position}{}
 \providecommand*{\@profilepic}{}
 \providecommand*{\@profilepicsize}{2.5cm}
 
@@ -50,8 +51,8 @@
     urlcolor=NavyBlue, % URL COLOR!
 }
 
-% Header
 \newcommand\headerview{%
+\noindent%
 \ifstrempty{\@profilepic}{}{%
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=north east,inner sep=0pt] at ([xshift=-0.5in,yshift=-0.1in]current page.north east) {%
@@ -59,13 +60,14 @@
     };
   \end{tikzpicture}%
 }%
-\noindent%
 \hbox to \linewidth{%
   \hfill%
-  \begin{minipage}[t]{0.55\linewidth} % extend header length here
+  \begin{minipage}[t]{0.62\linewidth}
       \vspace{0pt}%
-      \centering \name\par\vspace{0.05cm}
-      \contact % address \ mobile \\ mail
+      \centering \name\par
+      \ifstrempty{\@position}{}{{\footnotesize\color{black!70}\@position\par}}
+      \vspace{0.05cm}
+      \contact
   \end{minipage}%
   \hfill%
 }%
@@ -133,7 +135,7 @@
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \begin{minipage}{0.87\linewidth} \footnotesize #1 \end{minipage} \\[0.1cm]
+    \indent \begin{minipage}{0.92\linewidth} \footnotesize #1 \end{minipage} \\[0.1cm]
 }
 
 \newcommand\createskill[2]{%

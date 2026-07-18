@@ -10,8 +10,8 @@
 \hypersetup{
     pdftitle={履歴書 - Alexander Weichart},
     pdfauthor={Alexander Weichart},
-    pdfsubject={フルスタックソフトウェアエンジニア - 履歴書},
-    pdfkeywords={Alexander Weichart, 履歴書, ソフトウェアエンジニア, フルスタック, Java, TypeScript, SpringBoot, React, PostgreSQL, Kubernetes, GitLab, Flux CD, Linux, DevOps, Agile, AI, LLM, Claude, Agent},
+    pdfsubject={フルスタックソフトウェアエンジニア - AIネイティブ開発 - 履歴書},
+    pdfkeywords={Alexander Weichart, 履歴書, ソフトウェアエンジニア, フルスタック, Java, TypeScript, Spring Boot, React, PostgreSQL, Kubernetes, GitLab, Flux CD, Linux, DevOps, Agile, AI, LLM, Claude Code, Codex, Copilot, MCP, エージェント開発},
     pdfcopyright={Copyright (C) 2026 Alexander Weichart},
     pdfmetalang={ja},
     linkcolor=blue,
@@ -19,6 +19,7 @@
 }
 
 \setname{Alexander Weichart}{}
+\setposition{フルスタックソフトウェアエンジニア | AIネイティブ開発}
 \setaddress{大阪府、日本}
 \setbirthday{アレクサンダー・ヴァイヒャート}
 \renewcommand{\getPhone}{\ifdefempty{\PHONE}{}{電話: \PHONE}}
@@ -35,22 +36,36 @@
 
 \begin{document}
 
-%Create header
+\vspace*{3mm}
 \headerview
-\vspace{3ex} % white space (extra room for profile photo)
+\vspace{3ex}
 
 %
 \section{スキル}
-    \newcommand{\skillone}{\createskill{主要言語}{Java \cpshalf TypeScript \cpshalf Swift }}
-    \newcommand{\skilltwo}{\createskill{主要技術}{SpringBoot, React, Postgres \cpshalf Kubernetes, GitLab, Flux \cpshalf Linux  }}
-    \newcommand{\skillthree}{\createskill{言語能力}{ドイツ語（母語）\cpshalf 英語（流暢）\cpshalf 日本語（日常会話、JLPT N2学習中）\cpshalf フランス語（基礎）}}
+    \newcommand{\skillone}{\createskill{AIツール}{Claude Code \cpshalf Codex \cpshalf GitHub Copilot}}
+    \newcommand{\skilltwo}{\createskill{エージェント開発}{Skills, sub-agents, MCP \cpshalf コンテキスト設計、モデル選択}}
+    \newcommand{\skillthree}{\createskill{主要言語}{Java \cpshalf TypeScript \cpshalf Swift}}
+    \newcommand{\skillfour}{\createskill{主要技術}{Spring Boot, React, PostgreSQL \cpshalf Kubernetes, GitLab, Flux \cpshalf Linux}}
+    \newcommand{\skillfive}{\createskill{言語能力}{ドイツ語（母語）\cpshalf 英語（流暢）\cpshalf 日本語（日常会話）\cpshalf フランス語（基礎）}}
     %
-    \createskills{\skillone, \skilltwo, \skillthree}
+    \createskills{\skillone, \skilltwo, \skillthree, \skillfour, \skillfive}
     \vspace{-3mm} % reduces whitespace!
     %
 \bigskip
 
-\section{職務経歴}
+    \section{職務経歴}
+    %
+    \datedexperience{Birchill（大阪、日本）}{2026年4月 - 現在}
+    \explanation{フルスタックソフトウェアエンジニア（ワーキングホリデー）- TypeScript, AWS}{大阪、日本}
+    \explanationdetail{
+    \smallskip
+    \coloredbullet\ %
+    フルスタックの日本語学習プラットフォーム開発を主導し、フロントエンド、バックエンド、AWSインフラの技術設計からリリースまで担当。
+
+    \smallskip
+    \coloredbullet\ %
+    Lambda、DynamoDB、Step Functions、CDKを用いたTypeScriptサービスとデータ処理基盤を構築し、辞書データや学習機能を実装。
+    }
     %
     \datedexperience{DEBTVISION GmbH（バーデン＝ヴュルテンベルク州立銀行）}{2023年10月 - 2026年3月}
     \explanation{フルスタックソフトウェアエンジニア - Java, TypeScript, Kubernetes}{シュトゥットガルト、ドイツ}
@@ -61,7 +76,7 @@
 
     \smallskip
     \coloredbullet\ %
-    AI活用の開発手法（Copilot、AIコードレビュー）をチームに導入し、6ヶ月間で開発速度を80\%の向上に貢献。
+    部門横断型AI推進チームの開発代表として、チームで初めてGitHub Copilotを導入。ワークショップとメンタリングを通じてエージェント型開発の定着を主導し、6ヶ月間で\mbox{スプリントベロシティ}80\%向上に貢献。
 
     \smallskip
     \coloredbullet\ %
@@ -73,7 +88,7 @@
     }
     %
     \datedexperience{レーゲンスブルク大学}{2020年9月 - 2023年9月}
-    \explanation{学生リサーチアシスタント - JavaScript, Kotlin, C, Neo4J, Figma}{レーゲンスブルク、ドイツ}
+    \explanation{学生リサーチアシスタント - JavaScript, Kotlin, C, Neo4j, Figma}{レーゲンスブルク、ドイツ}
     \explanationdetail{
     \smallskip
     \coloredbullet\ %
@@ -88,18 +103,14 @@
     \explanationdetail{
     \smallskip
     \coloredbullet\ %
-    丁寧に設計されたミニマリストなiOSアプリを開発するスタジオ。各アプリは特定の課題に対し、完成度を追求。
-
-    \smallskip
-    \coloredbullet\ %
-    \href{https://apps.weichart.de}{3つのアプリ}を公開済み（例：\href{https://apps.apple.com/app/id6747954401}{Hibi}、紙のような使い心地のカレンダーアプリ）。累計ダウンロード数は1.5万件超。
+    \href{https://apps.weichart.de}{丁寧に設計したiOSアプリ3本}を開発・公開。紙のような使い心地のカレンダー\href{https://apps.apple.com/app/id6747954401}{Hibi}を含め、累計1.5万回以上ダウンロード。エージェント型開発ワークフローを活用。
     }
     %
-    \datedexperience{Digital Garden\ \href{https://alexanderweichart.de}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
+    \datedexperience{AIネイティブ・ナレッジシステム\ \href{https://alexanderweichart.de/4_Projects/obsidian-setup-2026/My-AI-native-Obsidian-Setup}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
     \explanationdetail{
     \smallskip
     \coloredbullet\ %
-    \href{https://alexanderweichart.de/4_Projects/obsidian-setup-2026/My-AI-native-Obsidian-Setup}{AI活用型}のナレッジベースを公開Webサイトとして運営。月間3,000アクセス超。
+    定期実行するClaude Codeルーティン、再利用可能なSkills、MCP/CLI連携、永続状態、承認フローを備えたGitベースのナレッジシステムを設計・構築。公開サイトは月間3,000アクセス超。
     }
     %
     \datedexperience{Obsidian 3D Graph\ \href{https://github.com/AlexW00/obsidian-3d-graph}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
@@ -109,26 +120,12 @@
     ObsidianのノートをWebGLグラフで可視化するプラグイン。ダウンロード数5万件超、GitHubスター350件超。
     }
     %
-    \datedexperience{AI実験\ \href{https://alexanderweichart.de/4_Projects/Projects}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
+    \datedexperience{AIプロトタイプ（2023年〜）\ \href{https://alexanderweichart.de/4_Projects/Projects}{{\normalfont\mdseries\upshape\textcolor{NavyBlue}{\raisebox{0.15ex}{\faLink}}}}}{}
     \explanationdetail{
     \smallskip
+    \raggedright
     \coloredbullet\ %
-    最先端のAIソリューションをプロトタイプで探求：自然言語からJavaScriptへのコンパイラ（\href{https://alexanderweichart.de/4_Projects/Projects\#-gpt-lang-2023-03-24}{GPT-Lang}）、バーチャル言語タンデムパートナー（\href{https://alexanderweichart.de/4_Projects/Projects\#-tandem-gpt-2023-02-04}{Tandem GPT}）、\href{https://alexanderweichart.de/4_Projects/Projects\#ai-hud-for-japanese-text-2025-12-22}{日本語テキスト認識用AI-HUD}など。
-    }
-
-\bigskip
-
-\section{ワーキングホリデー}
-    \datedexperience{Birchill（大阪、日本）}{2026年4月 - 現在}
-    \explanation{パートタイムソフトウェアエンジニア - TypeScript, ブラウザ拡張機能}{大阪、日本}
-    \explanationdetail{
-    \smallskip
-    \coloredbullet\ %
-    小規模プロダクト企業にて、人気の日本語リーディングツール\href{https://10ten.life}{10ten}の開発に従事。
-
-    \smallskip
-    \coloredbullet\ %
-    大阪の技術系ミートアップへの参加、個人プロジェクトの開発、日本語学習（JLPT N2）に取り組み中。
+    2023年からLLMを活用：自然言語をJavaScriptに変換する\href{https://alexanderweichart.de/4_Projects/Projects\#-gpt-lang-2023-03-24}{GPT-Lang}、\href{https://alexanderweichart.de/4_Projects/Projects\#-tandem-gpt-2023-02-04}{Tandem GPT}、\mbox{最新作の\href{https://alexanderweichart.de/4_Projects/Projects\#ai-hud-for-japanese-text-2025-12-22}{日本語テキスト認識AI-HUD}}。
     }
 
 \bigskip
@@ -155,9 +152,6 @@
 \coloredbullet\ %
 日独協会レーゲンスブルク（\href{https://djg-regensburg.de/de/}{DJG Regensburg}）の支援会員。
 
-\smallskip
-\coloredbullet\ %
-\href{https://ratisbona-coding.org/}{Ratisbona Coding E.V.}（コーディングイベントを主催する地域団体）のメンバー。
 }
 \bigskip
 
